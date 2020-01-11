@@ -1,7 +1,7 @@
 #ifndef CLIENT
 #define CLIENT
 
-#include "client.h"
+#include "input_buffer.h"
 
 class Client
 {
@@ -10,6 +10,8 @@ class Client
 		~Client();
 		void start();
 		void print_prompt();
+		InputBuffer *input_buffer;
+		int client_exit;
 };
 
 #endif
