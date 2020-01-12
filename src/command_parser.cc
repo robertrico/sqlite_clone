@@ -12,9 +12,12 @@ CommandParser::~CommandParser()
 
 int CommandParser::parse(std::string command)
 {
-	if( command.compare(".exit") == 0 ){
-		return 1;
-	}
 
-	return 0;
+	Statement *statement = new Statement(command);
+
+	int return_code = statement->execute();
+
+	delete statement;
+
+	return return_code;
 }

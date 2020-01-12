@@ -3,7 +3,7 @@ CFLAGS=-g -Wall -Iinclude
 EXEC=dbclone.out
 BIN=bin/
 SRC=src/
-WBO=build/main.o build/input_buffer.o build/client.o build/command_parser.o
+WBO=build/main.o build/input_buffer.o build/client.o build/command_parser.o build/statement.o
 
 all: main
 
@@ -21,6 +21,9 @@ build/client.o: src/client.cc
 
 build/command_parser.o: src/command_parser.cc
 	$(CC) $(CFLAGS) -c src/command_parser.cc -o build/command_parser.o
+
+build/statement.o: src/statement.cc
+	$(CC) $(CFLAGS) -c src/statement.cc -o build/statement.o
 
 clean:
 	rm build/*.o

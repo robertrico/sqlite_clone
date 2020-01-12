@@ -2,9 +2,9 @@
 
 InputBuffer::InputBuffer()
 {
-	buffer_length = 0;
-	input_length = 0;
-	cmd_parser = new CommandParser();
+	this->buffer_length = 0;
+	this->input_length = 0;
+	this->cmd_parser = new CommandParser();
 }
 
 InputBuffer::~InputBuffer()
@@ -23,8 +23,8 @@ int InputBuffer::read()
 		exit(EXIT_FAILURE);
 	}
 
-	input_length = bytes_read;
-	buffer[bytes_read] = 0;
+	this->input_length = bytes_read;
+	this->buffer[bytes_read] = 0;
 
 	int alive = 0;
 

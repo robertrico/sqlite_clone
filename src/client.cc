@@ -8,18 +8,19 @@ Client::Client()
 
 Client::~Client()
 {
-	delete input_buffer;
+	delete this->input_buffer;
 }
 
 void Client::start()
 {
 	while(true){
-		if(client_exit)
+		if(this->client_exit)
 			break;
 
 		print_prompt();
-		
-		client_exit = input_buffer->read();
+
+		// TODO Create and use setter
+		this->client_exit = this->input_buffer->read();
 
 	}
 	
